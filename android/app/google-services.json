@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "423201429871",
+    "project_id": "crudcar-5f374",
+    "storage_bucket": "crudcar-5f374.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423201429871:android:66732824ddd8116b2f309a",
+        "android_client_info": {
+          "package_name": "com.foxbith.CrudCar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNOu3hm4xaLZpbntZBNLxDjY9B-iO4iDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
