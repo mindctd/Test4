@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,7 +18,7 @@ class _CrudPageState extends State<CrudPage> {
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
   bool opening = false;
-
+  final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
   late final User? user;
   late final String uid;
   late final DocumentReference userCarDoc;
@@ -237,6 +238,12 @@ class _CrudPageState extends State<CrudPage> {
             onPressed: isEdit ? updateItems : addItems,
             child: Text(isEdit ? "Update" : "Add Data"),
           ),
+          ElevatedButton(
+              onPressed: () {
+                analytics.logEvent(name: 'Check', parameters: {'mind': "test"});
+                print("✅ Analytics event sent: Check");
+              },
+              child: Text('test analytics'))
         ],
       ),
     );

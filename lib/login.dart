@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_crud/crud.dart';
 import 'package:firebase_crud/resetPassword.dart';
@@ -16,6 +17,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 
   Future<void>? _loginVerify(String inputemail, String inputpassword) async {
     if (inputemail.isEmpty || inputpassword.isEmpty) {
@@ -224,7 +226,14 @@ class _LoginState extends State<Login> {
                                   builder: (context) => Signup()));
                         },
                         child: Text('Create new account')),
-                  )
+                  ),
+                  // ElevatedButton(
+                  //     onPressed: () {
+                  //       analytics.logEvent(
+                  //           name: 'Check', parameters: {'mind': "test"});
+                  //       print("✅ Analytics event sent: Check");
+                  //     },
+                  //     child: Text('test analytics'))
                 ],
               ),
             ]),
